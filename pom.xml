@@ -1,30 +1,72 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>io.github.oliviercailloux.jmcda</groupId>
+	<artifactId>pom</artifactId>
+	<version>0.5.4-SNAPSHOT</version>
+	<name>J-MCDA Project POM</name>
+	<description>The parent POM for the J-MCDA Project: a set of libraries and tools to work with Multiple Criteria Decision Aid (MCDA) concepts such as a set of evaluations over a set of alternatives on a set of criteria, an outranking matrix, ...</description>
+	<packaging>pom</packaging>
+	<url>https://github.com/oliviercailloux/jmcda-pom</url>
 	<licenses>
 		<license>
 			<name>GNU Lesser General Public License version 3</name>
 			<url>http://www.gnu.org/licenses/lgpl.html</url>
 		</license>
+		<license>
+			<name>MIT License</name>
+			<url>https://opensource.org/licenses/MIT</url>
+		</license>
 	</licenses>
-	<modelVersion>4.0.0</modelVersion>
-	<groupId>io.github.oliviercailloux.jmcda</groupId>
-	<artifactId>pom</artifactId>
-	<version>0.5.4-SNAPSHOT</version>
-	<name>J-MCDA Project</name>
-	<description>A set of libraries and tools to work with Multiple Criteria Decision Aid (MCDA) concepts such as a set of evaluations over a set of alternatives on a set of criteria, an outranking matrix, ...</description>
-	<packaging>pom</packaging>
+	<scm>
+		<connection>scm:git:git://github.com/oliviercailloux/jmcda-pom.git</connection>
+		<developerConnection>scm:git:ssh://github.com/oliviercailloux/jmcda-pom.git</developerConnection>
+		<url>https://github.com/oliviercailloux/jmcda-pom</url>
+	</scm>
+	<developers>
+		<developer>
+			<name>Olivier Cailloux</name>
+			<email>olivier.cailloux@dauphine.fr</email>
+			<url>http://www.lamsade.dauphine.fr/~ocailloux/</url>
+			<organization>Paris-Dauphine</organization>
+			<organizationUrl>http://www.dauphine.fr</organizationUrl>
+		</developer>
+	</developers>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>8</maven.compiler.source>
 		<maven.compiler.target>8</maven.compiler.target>
 	</properties>
+	<distributionManagement>
+		<snapshotRepository>
+			<id>ossrh</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+		</snapshotRepository>
+		<repository>
+			<id>ossrh</id>
+			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+		</repository>
+	</distributionManagement>
 	<build>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>3.0.1</version>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar-no-fork</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
-				<version>2.6.1</version>
+				<version>3.0.0</version>
 				<configuration>
 					<author>false</author>
 					<encoding>UTF-8</encoding>
@@ -42,17 +84,24 @@
 						<link>http://download.oracle.com/javase/6/docs/api/</link>
 					</links>
 				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-source-plugin</artifactId>
-				<version>2.1.2</version>
 				<executions>
 					<execution>
-						<id>attach-sources</id>
-						<phase>package</phase>
+						<id>attach-javadocs</id>
 						<goals>
-							<goal>jar-no-fork</goal>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<artifactId>maven-gpg-plugin</artifactId>
+				<version>1.6</version>
+				<executions>
+					<execution>
+						<id>sign-artifacts</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>sign</goal>
 						</goals>
 					</execution>
 				</executions>
