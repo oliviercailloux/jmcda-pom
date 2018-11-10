@@ -8,8 +8,8 @@
 		</license>
 	</licenses>
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>org.decision_deck.jmcda</groupId>
-	<artifactId>jmcda-pom</artifactId>
+	<groupId>io.github.oliviercailloux.jmcda</groupId>
+	<artifactId>pom</artifactId>
 	<version>0.5.4-SNAPSHOT</version>
 	<name>J-MCDA Project</name>
 	<description>A set of libraries and tools to work with Multiple Criteria Decision Aid (MCDA) concepts such as a set of evaluations over a set of alternatives on a set of criteria, an outranking matrix, ...</description>
