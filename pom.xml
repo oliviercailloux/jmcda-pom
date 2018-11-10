@@ -20,9 +20,9 @@
 		</license>
 	</licenses>
 	<scm>
-		<connection>scm:git:git://github.com/oliviercailloux/jmcda-pom.git</connection>
-		<developerConnection>scm:git:ssh://github.com/oliviercailloux/jmcda-pom.git</developerConnection>
-		<url>https://github.com/oliviercailloux/jmcda-pom</url>
+		<connection>scm:git:git://github.com/oliviercailloux/jmcda-${project.artifactId}.git</connection>
+		<developerConnection>scm:git:ssh://github.com/oliviercailloux/jmcda-${project.artifactId}.git</developerConnection>
+		<url>https://github.com/oliviercailloux/jmcda-${project.artifactId}</url>
 	</scm>
 	<developers>
 		<developer>
