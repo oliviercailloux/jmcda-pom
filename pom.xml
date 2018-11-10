@@ -66,15 +66,12 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
-				<version>3.0.0</version>
+				<version>3.0.1</version>
 				<configuration>
-					<author>false</author>
-					<encoding>UTF-8</encoding>
-					<doctitle>${project.name} javadoc (${project.version})</doctitle>
 					<show>public</show>
-					<windowtitle>${project.name} javadoc</windowtitle>
 					<links>
-						<detectLinks />
+						<!-- Makes mvn javadoc:javadoc crash with a NullPointerException -->
+						<!-- <detectLinks /> -->
 						<link>http://j-mcda.sourceforge.net/javadoc-current/J-MCDA/</link>
 						<link>http://j-mcda.sourceforge.net/javadoc-current/XMCDA/</link>
 						<link>http://j-mcda.sourceforge.net/javadoc-current/XMCDA-WS/</link>
