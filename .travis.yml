@@ -1,8 +1,6 @@
 language: java
 git:
   depth: 1
-jdk:
-  - openjdk8
 dist: xenial
 cache:
   directories:
