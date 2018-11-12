@@ -108,28 +108,6 @@
 			</build>
 		</profile>
 	</profiles>
-	<build>
-		<pluginManagement>
-			<plugins>
-				<plugin>
-					<groupId>org.codehaus.mojo</groupId>
-					<artifactId>xmlbeans-maven-plugin</artifactId>
-					<version>2.3.3</version>
-					<executions>
-						<execution>
-							<goals>
-								<goal>xmlbeans</goal>
-							</goals>
-						</execution>
-					</executions>
-					<configuration>
-						<javaSource>1.5</javaSource>
-						<!--<verbose>true</verbose> -->
-					</configuration>
-				</plugin>
-			</plugins>
-		</pluginManagement>
-	</build>
 	<dependencies>
 		<dependency>
 			<groupId>org.slf4j</groupId>
