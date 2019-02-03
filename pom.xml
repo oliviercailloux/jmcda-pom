@@ -72,9 +72,6 @@
 							<show>public</show>
 							<links>
 								<link>https://static.javadoc.io/com.google.guava/guava/19.0</link>
-								<!-- <link>https://google.github.io/guava/releases/19.0/api/docs</link> 
-									works -->
-								<!-- <link>https://google.com</link> errs -->
 							</links>
 							<!-- https://stackoverflow.com/a/47891403. Works under JDK 8, fails 
 								under JDK 11 -->
