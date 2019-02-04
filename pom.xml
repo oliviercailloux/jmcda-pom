@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>io.github.oliviercailloux.jmcda</groupId>
 	<artifactId>pom</artifactId>
-	<version>0.6.0</version>
+	<version>0.6.1-SNAPSHOT</version>
 	<name>J-MCDA Project POM</name>
 	<description>The parent POM for the J-MCDA Project: a set of libraries and tools to work with Multiple Criteria Decision Aid (MCDA) concepts such as a set of evaluations over a set of alternatives on a set of criteria, an outranking matrix, ...</description>
 	<packaging>pom</packaging>
