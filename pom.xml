@@ -67,19 +67,26 @@
 					</plugin>
 					<plugin>
 						<artifactId>maven-javadoc-plugin</artifactId>
-						<version>3.0.1</version>
+						<version>3.0.0</version>
 						<configuration>
 							<show>public</show>
 							<links>
-								<link>https://static.javadoc.io/com.google.guava/guava/19.0</link>
+								<!-- Works under JDK 8 with 3.0.0. Fails under JDK 11 with 3.0.1 
+									with ERROR. Fails under JDK 8 with 3.0.1, emits only a message in debug mode: 
+									“Could not follow https://static.javadoc.io/com.google.guava/guava/19.0/. 
+									Reason: Unexpected HTTP status code 403 getting resource https://static.javadoc.io/com.google.guava/guava/19.0/”, 
+									happens with and without trailing slash and with and without validateLinks 
+									and with and without -J-Dhttp.agent. Maybe related to https://issues.apache.org/jira/browse/MJAVADOC-427: 
+									changed link management in 3.0.1 (in between Dec 2017 and May 2018). -->
+								<link>https://static.javadoc.io/com.google.guava/guava/19.0/</link>
 							</links>
-							<!-- https://stackoverflow.com/a/47891403. Works under JDK 8, fails 
-								under JDK 11 -->
+							<validateLinks>true</validateLinks>
+							<failOnWarnings>true</failOnWarnings>
+							<quiet>true</quiet>
+							<!-- https://stackoverflow.com/a/47891403 -->
 							<additionalJOption>
 								-J-Dhttp.agent=maven-javadoc-plugin-agent
 							</additionalJOption>
-							<failOnWarnings>true</failOnWarnings>
-							<quiet>true</quiet>
 						</configuration>
 						<executions>
 							<execution>
